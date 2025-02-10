@@ -206,7 +206,6 @@ export const queries = {
         firstName
         lastName
       }
-
       colorScheme
       avatarUrl
       locale
