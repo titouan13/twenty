@@ -72,10 +72,10 @@ export const RoleWorkspaceMemberPickerDropdown = ({
       : undefined,
   });
 
-  const filteredWorkspaceMembers = workspaceMembers?.filter(
+  const filteredWorkspaceMembers = (workspaceMembers?.filter(
     (workspaceMember) =>
       !excludedWorkspaceMemberIds.includes(workspaceMember.id),
-  ) as WorkspaceMember[];
+  ) ?? []) as WorkspaceMember[];
 
   const handleSearchFilterChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchFilter(event.target.value);
@@ -100,6 +100,7 @@ export const RoleWorkspaceMemberPickerDropdown = ({
       <StyledWorkspaceMemberItem
         key={workspaceMember.id}
         onClick={() => onSelect(workspaceMember)}
+        aria-label={`${workspaceMember.name.firstName} ${workspaceMember.name.lastName}`}
       >
         <Avatar
           type="rounded"

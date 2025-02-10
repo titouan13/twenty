@@ -128,7 +128,7 @@ export const RoleAssignment = ({ role }: RoleAssignmentProps) => {
         />
         <Table>
           <RoleAssignmentTableHeader />
-          {role.workspaceMembers?.map((workspaceMember) => (
+          {role.workspaceMembers.map((workspaceMember) => (
             <RoleAssignmentTableRow
               key={workspaceMember.id}
               workspaceMember={workspaceMember}
