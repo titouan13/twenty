@@ -206,9 +206,11 @@ export const queries = {
         firstName
         lastName
       }
+
       colorScheme
       avatarUrl
       locale
+      userEmail
       timeZone
       dateFormat
       timeFormat
